@@ -50,7 +50,7 @@ export default  {
     }
   },
   created() {
-    axios.get('https://www.eventcinemas.com.au/Movies/GetNowShowing')
+    axios.get('https://cors-anywhere.herokuapp.com/https://www.eventcinemas.com.au/Movies/GetNowShowing')
       .then(response => {
         this.movies = response.data.Data.Movies
         this.options = response.data.Data.Genres
