@@ -19,6 +19,8 @@
         <ion-card-content>
             <h2 class="ion-text-center"><b>Director:</b> {{ details.Director }}</h2>
             <h2 class="ion-text-center"><b>Genre:</b> {{ details.Genres }}</h2>
+            <h2 class="ion-text-center"><b>RunTime:</b> {{ details.RunningTime }} mins</h2>
+            <h2 class="ion-text-center"><b>Release Date:</b> {{ details.ReleasedAt }}</h2>
             <h2 class="ion-text-center"><b>Cast:</b> {{ details.MainCast }}</h2>
             <p class="ion-text-center"><b>Plot:</b>{{ details.Synopsis }} </p>
         </ion-card-content>
