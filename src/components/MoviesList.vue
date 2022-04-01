@@ -3,7 +3,7 @@
     <ion-thumbnail slot="start">
       <ion-img :src="movie.LargePosterUrl" :alt="movie.Name"></ion-img>
     </ion-thumbnail>
-    <ion-label>
+    <ion-label> 
       {{ movie.Name }}
     </ion-label>
   </ion-item>

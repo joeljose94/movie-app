@@ -1,7 +1,7 @@
 <template>
   <ion-title>Details</ion-title>
     <ion-content>
-      <h2> {{ details }} </h2>
+      <h2> {{ details.enteredName }} </h2>
       <ion-list>
         <ul>
           

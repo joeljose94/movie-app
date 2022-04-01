@@ -42,7 +42,7 @@
         <ion-button type="submit" expand="full">Submit</ion-button>
         <ion-button expand="full" @click="resetData">Reset</ion-button>
       </form>
-      <div v-show="showResults">      
+      <!-- <div v-show="showResults">      
           <ion-list v-for="(detail, index) in details" :key="index">
               <b> User Details </b>
               <br>
@@ -55,7 +55,8 @@
               Movie Head: {{ detail.mfan }}
               <br>
           </ion-list>
-      </div>
+      </div> -->
+      <FormDetails :details="details"></FormDetails>
     </ion-content>
   </ion-page>
 </template>
@@ -74,6 +75,7 @@ import {
   IonDatetime,
   IonToggle,
 } from "@ionic/vue";
+import FormDetails from '../pages/FormDetails.vue';
 
 export default {
   name: "Form",
@@ -89,6 +91,7 @@ export default {
     IonButton,
     IonDatetime,
     IonToggle,
+    FormDetails
   },
   data() {
     return {
@@ -96,7 +99,7 @@ export default {
       favMovie: "",
       dob: "",
       mfan: false,
-      details: [],
+      details: {},
       showResults: false,
     }
   },
@@ -111,20 +114,20 @@ export default {
       this.showResults = false
     },
     submitForm() {
-      // if  ( this.enteredName == '' || this.favMovie == null || this.dob == '' ) {
-      //     alert('Please fill details to submit')
-      //     return
-      // }
+       if  ( this.enteredName == '' || this.favMovie == null || this.dob == '' ) {
+           alert('Please fill details to submit')
+           return
+       }
 
       var n_dob = this.dob.split("T")[0]
-      this.details = []
-      var result = {
+      // this.details = []
+      this.details = {
         enteredName: this.enteredName,
         favMovie: this.favMovie,
         dob: n_dob,
         mfan: this.mfan
       }
-      this.details.push(result)
+      //this.details.push(result)
       this.showResults = true
       console.log(this.details)
       
